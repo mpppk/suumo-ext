@@ -1,4 +1,4 @@
-import { BukkenSummary, RawBukkenSummary } from '../model/models';
+import { BukkenSummary, RawBukkenSummary } from '../models/models';
 
 export const parseRawBukkenSummary = (rawBukkenSummary: RawBukkenSummary): BukkenSummary => {
   return {
