@@ -28,7 +28,7 @@ const main = async (): Promise<any> => {
       const errCallback = () => lastModified = -1;
       while (true) {
         dir.getFile('reload', { create: false }, successCallback, errCallback);
-        await sleep(1000);
+        await sleep(500);
       }
     });
   }

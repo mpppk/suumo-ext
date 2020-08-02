@@ -14,7 +14,7 @@
     "react-dom": "16.13.1"
   },
   "scripts": {
-    "build": "esbuild src/* --bundle '--define:process.env.NODE_ENV=\"production\"' --outdir=dist/src --sourcemap && yarn reload",
+    "build": "esbuild src/content_script.tsx --bundle '--define:process.env.NODE_ENV=\"production\"' --outdir=dist/src --sourcemap && yarn reload",
     "watch": "node watch.js",
     "reload": "touch dist/reload",
     "pretty-quick": "pretty-quick",

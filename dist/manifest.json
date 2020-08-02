@@ -1,8 +1,8 @@
 {
-  "name": "test-extension",
+  "name": "suumo",
   "manifest_version": 2,
-  "version": "1.0.0",
-  "description": "test-extension | サンプルアプリ",
+  "version": "0.0.1",
+  "description": "非公式SUUMO用Chrome拡張",
   "icons": {
     "128": "logo192.png"
   },
@@ -14,7 +14,7 @@
   },
   "content_scripts" : [
     {
-      "matches": [ "<all_urls>" ],
+      "matches": [ "*://suumo.jp/jj/chintai/ichiran/*"],
       "js": ["/src/content_script.js"]
     }
   ],
