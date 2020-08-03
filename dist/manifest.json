@@ -14,7 +14,7 @@
   },
   "content_scripts" : [
     {
-      "matches": [ "*://suumo.jp/jj/chintai/ichiran/*"],
+      "matches": [ "*://suumo.jp/*"],
       "js": ["/src/content_script.js"]
     }
   ],

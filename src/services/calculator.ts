@@ -7,3 +7,13 @@ export const calc2YearPrice = (summary: BukkenSummary): number => {
   price += summary.rentPrice; // 仲介手数料
   return price;
 }
+
+// 1平方メートルあたりの賃料を返します
+export const calcPricePerM2 = (summary: BukkenSummary): number => {
+  return (summary.rentPrice+summary.adminPrice) / summary.menseki;
+}
+
+// 坪単価を返します
+export const calcPricePerTsubo = (summary: BukkenSummary): number => {
+  return calcPricePerM2(summary) * 3.3;
+}

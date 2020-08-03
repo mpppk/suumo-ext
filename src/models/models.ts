@@ -18,5 +18,7 @@ export interface BukkenSummary {
   adminPrice: number // 管理費
   deposit: number // 敷金
   gratuity: number // 礼金
+  madori: string
+  menseki: number
 }
 

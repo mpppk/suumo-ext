@@ -6,9 +6,15 @@ export const parseRawBukkenSummary = (rawBukkenSummary: RawBukkenSummary): Bukke
     adminPrice: parseKanjiPrice(rawBukkenSummary.adminPrice),
     deposit: parseKanjiPrice(rawBukkenSummary.deposit),
     gratuity: parseKanjiPrice(rawBukkenSummary.gratuity),
-    rentPrice: parseKanjiPrice(rawBukkenSummary.rentPrice)
+    rentPrice: parseKanjiPrice(rawBukkenSummary.rentPrice),
+    madori: rawBukkenSummary.madori,
+    menseki: parseMenseki(rawBukkenSummary.menseki),
   };
 };
+
+const parseMenseki = (m: string): number => {
+  return Number.parseFloat(m.replace('m2', ''));
+}
 
 const parseKanjiPrice = (ap: string): number => {
   const price = ap.includes('万円') ?
