@@ -12,6 +12,10 @@ export interface RawBukkenSummary {
   menseki: string // 占有面積
 }
 
+export interface Bukken extends RawBukkenSummary {
+
+}
+
 export interface BukkenSummary {
   address: string // 住所
   rentPrice: number // 賃料

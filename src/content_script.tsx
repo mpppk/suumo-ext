@@ -1,16 +1,45 @@
-import { BukkenSummary, RawBukkenSummary } from './models/models';
+import { Bukken, BukkenSummary, RawBukkenSummary } from './models/models';
 import { parseRawBukkenSummary } from './services/parser';
 import { calc2YearPrice, calcPricePerM2, calcPricePerTsubo } from './services/calculator';
 import { ceil } from './services/util';
 
 const main = () => {
-  const bukkenListDiv = document.body.querySelector('#js-bukkenList');
-  const bukkenList = Array.from(bukkenListDiv?.querySelectorAll('.cassetteitem')!);
+  listPageHandler();
+  bukkenPageHandler();
+};
 
-  if (bukkenList === null) {
+const bukkenPageHandler = () => {
+  const galleryDiv = document.body.querySelector('#js-view_gallery');
+  if (galleryDiv === null) {
     return
   }
 
+  const adminPrice = galleryDiv.querySelector('.property_view_note-list>span:nth-of-type(2)')?.textContent!;
+
+  const rows = Array.from(galleryDiv.querySelectorAll('table.property_view_table tr'));
+
+  const bukken: Bukken = {
+    address: rows[0].querySelector('td')?.textContent!,
+    adminPrice,
+    deposit: galleryDiv.querySelector('.property_view_note-emphasis')?.textContent!,
+    floor: '',
+    gratuity: '',
+    madori: '',
+    maxFloor: '',
+    menseki: '',
+    rentPrice: '',
+    stations: [],
+    tiku: ''
+  };
+};
+
+const listPageHandler = () => {
+  const bukkenListDiv = document.body.querySelector('#js-bukkenList');
+  if (bukkenListDiv === null) {
+    return
+  }
+
+  const bukkenList = Array.from(bukkenListDiv?.querySelectorAll('.cassetteitem')!);
   const rawBukkenSummaries: RawBukkenSummary[] = bukkenList.map((bukken) => {
     const detailRows = bukken.querySelectorAll('.cassetteitem_content-body ul.cassetteitem_detail li');
     const stations = Array.from(detailRows[1].querySelectorAll('div.cassetteitem_detail-text'));
