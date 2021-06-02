@@ -32,7 +32,7 @@
     ]
   },
   "devDependencies": {
-    "@types/chrome": "0.0.143",
+    "@types/chrome": "0.0.144",
     "chokidar": "3.5.1",
     "esbuild": "0.12.5",
     "husky": "4.3.8",
