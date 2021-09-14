@@ -34,7 +34,7 @@
   "devDependencies": {
     "@types/chrome": "0.0.157",
     "chokidar": "3.5.2",
-    "esbuild": "0.12.27",
+    "esbuild": "0.12.28",
     "husky": "4.3.8",
     "prettier": "2.4.0",
     "pretty-quick": "2.0.2",
